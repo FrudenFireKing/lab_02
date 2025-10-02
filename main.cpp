@@ -70,7 +70,7 @@ void demonstrateThreeClass() {
     std::cout << "Адрес исходного объекта: " << &number << std::endl;
     std::cout << "Адрес объекта после операции: " << &number_copy << std::endl;
 
-    std::cout << "\n8. Попытка 'изменить' объект (защита компилятором):" << std::endl;
+    std::cout << "\n6. Попытка 'изменить' объект (защита компилятором):" << std::endl;
 
     Three num("100");
     std::cout << "Попытка изменить num = Three(\"200\"): ";

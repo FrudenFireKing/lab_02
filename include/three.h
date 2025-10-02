@@ -43,12 +43,12 @@ public:
     
     Three& operator=(const Three& other) {
         (void)other;
-        throw std::runtime_error("Объект Three неизменяемый! Нельзя присвоить новое значение.");
+        throw std::runtime_error("Р”Р»СЏ РѕР±СЉРµРєС‚Р° Three РЅРµР»СЊР·СЏ РїСЂРёСЃРІРѕРёС‚СЊ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ!");
     }
     
     Three& operator=(Three&& other) {
         (void)other;
-        throw std::runtime_error("Объект Three неизменяемый! Нельзя присвоить новое значение.");
+        throw std::runtime_error("Р”Р»СЏ РѕР±СЉРµРєС‚Р° Three РЅРµР»СЊР·СЏ РїСЂРёСЃРІРѕРёС‚СЊ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ!");
     }
 };
 

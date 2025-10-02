@@ -10,11 +10,11 @@ Three::Three() {
 
 Three::Three(const size_t& n, unsigned char t) {
     if (n == 0) {
-        throw invalid_argument("Size cannot be zero");
+        throw invalid_argument("Размер не может быть равен нулю.");
     }
     
     if (!val_tern(t)) {
-        throw invalid_argument("Invalid ternary digit");
+        throw invalid_argument("Недопустимая троичная цифра");
     }
     
     digits.resize(n, t);
@@ -23,12 +23,12 @@ Three::Three(const size_t& n, unsigned char t) {
 
 Three::Three(const initializer_list<unsigned char>& t) {
     if (t.size() == 0) {
-        throw invalid_argument("Initializer list cannot be empty");
+        throw invalid_argument("Список инициализаторов не может быть пустым");
     }
     
     for (auto it = t.begin(); it != t.end(); ++it) {
         if (!val_tern(*it)) {
-            throw invalid_argument("Invalid ternary digit in initializer list");
+            throw invalid_argument("Недопустимая троичная цифра в списке инициализаторов");
         }
         digits.push_back(*it);
     }
@@ -39,7 +39,7 @@ Three::Three(const initializer_list<unsigned char>& t) {
 
 Three::Three(const string& t) {
     if (t.empty()) {
-        throw invalid_argument("String cannot be empty");
+        throw invalid_argument("Строка не может быть пустой");
     }
     
     for (auto it = t.rbegin(); it != t.rend(); ++it) {
@@ -72,12 +72,12 @@ unsigned char Three::ch_to_dg(unsigned char c) const {
     if (c >= '0' && c <= '2') {
         return static_cast<unsigned char>(c - '0');
     }
-    throw invalid_argument("Invalid character in ternary string");
+    throw invalid_argument("Недопустимый символ в тернарной строке");
 }
 
 char Three::dg_to_ch(unsigned char digit) const {
     if (!val_tern(digit)) {
-        throw invalid_argument("Invalid ternary digit");
+        throw invalid_argument("Недопустимая троичная цифра");
     }
     return static_cast<char>('0' + digit);
 }
@@ -115,7 +115,7 @@ Three Three::plus(const Three& other) const {
 
 Three Three::minus(const Three& other) const {
     if (lower(other)) {
-        throw invalid_argument("Cannot subtract larger number from smaller");
+        throw invalid_argument("Нельзя вычитать из меньшего числа большее!");
     }
     
     if (equal(other)) {
