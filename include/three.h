@@ -40,6 +40,10 @@ public:
     bool bigger(const Three& other) const;
 
     bool iszero() const;
+
+    bool try_assign(const Three& other) {
+        return false;
+    }
     
     Three& operator=(const Three& other) {
         (void)other;
