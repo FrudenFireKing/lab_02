@@ -15,7 +15,7 @@ public:
     void rm_lead_zer();
     bool val_tern(unsigned char digit) const;
     unsigned char ch_to_dg(unsigned char c) const;
-    char digitToChar(unsigned char digit) const;
+    char dg_to_ch(unsigned char digit) const;
 
     Three();
     explicit Three(const size_t& n, unsigned char t = 0);
@@ -26,20 +26,20 @@ public:
     virtual ~Three() noexcept;
 
     size_t getSize() const { return digits.size(); }
-    std::string toString() const;
-    const std::vector<unsigned char>& getDigits() const { return digits; }
+    std::string tostr() const;
+    const std::vector<unsigned char>& getdg() const { return digits; }
 
-    Three add(const Three& other) const;
-    Three subtract(const Three& other) const;
+    Three plus(const Three& other) const;
+    Three minus(const Three& other) const;
     
-    Three addAndAssign(const Three& other) const;
-    Three subtractAndAssign(const Three& other) const;
+    Three plus_assign(const Three& other) const;
+    Three minus_assign(const Three& other) const;
 
-    bool equals(const Three& other) const;
-    bool lessThan(const Three& other) const;
-    bool greaterThan(const Three& other) const;
+    bool equal(const Three& other) const;
+    bool lower(const Three& other) const;
+    bool bigger(const Three& other) const;
 
-    bool isZero() const;
+    bool iszero() const;
     
     Three& operator=(const Three& other) {
         (void)other;

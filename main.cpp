@@ -2,91 +2,87 @@
 #include "three.h"
 
 void demonstrateThreeClass() {
-    std::cout << "=== Äåìîíñòðàöèÿ êëàññà Three äëÿ ðàáîòû ñ òðîè÷íûìè ÷èñëàìè ===" << std::endl;
+    std::cout << "=== Ð”ÐµÐ¼Ð¾Ð½ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ ÐºÐ»Ð°ÑÑÐ° Three Ð´Ð»Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ Ñ‚Ñ€Ð¾Ð¸Ñ‡Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸ ===" << std::endl;
     
-    std::cout << "\n1. Ñîçäàíèå ÷èñåë:" << std::endl;
+    std::cout << "\n1. Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ñ‡Ð¸ÑÐµÐ»:" << std::endl;
     
     Three num1;
-    std::cout << "Ïî óìîë÷àíèþ: " << num1.toString() << std::endl;
+    std::cout << "ÐŸÐ¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ: " << num1.tostr() << std::endl;
     
     Three num2(4, 2);
-    std::cout << "Èç ðàçìåðà è çíà÷åíèÿ: " << num2.toString() << std::endl;
+    std::cout << "Ð˜Ð· Ñ€Ð°Ð·Ð¼ÐµÑ€Ð° Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: " << num2.tostr() << std::endl;
     
     Three num3{1, 2, 0, 1};
-    std::cout << "Èç ñïèñêà èíèöèàëèçàöèè: " << num3.toString() << std::endl;
+    std::cout << "Ð˜Ð· ÑÐ¿Ð¸ÑÐºÐ° Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ð¸: " << num3.tostr() << std::endl;
     
     Three num4("2101");
-    std::cout << "Èç ñòðîêè: " << num4.toString() << std::endl;
+    std::cout << "Ð˜Ð· ÑÑ‚Ñ€Ð¾ÐºÐ¸: " << num4.tostr() << std::endl;
     
-    std::cout << "\n2. Àðèôìåòè÷åñêèå îïåðàöèè:" << std::endl;
+    std::cout << "\n2. ÐÑ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸:" << std::endl;
     
     Three a("120");
     Three b("21");
     
-    std::cout << a.toString() << " + " << b.toString() << " = ";
-    Three sum = a.add(b);
-    std::cout << sum.toString() << std::endl;
+    std::cout << a.tostr() << " + " << b.tostr() << " = ";
+    Three sum = a.plus(b);
+    std::cout << sum.tostr() << std::endl;
     
-    std::cout << a.toString() << " - " << b.toString() << " = ";
-    Three diff = a.subtract(b);
-    std::cout << diff.toString() << std::endl;
+    std::cout << a.tostr() << " - " << b.tostr() << " = ";
+    Three diff = a.minus(b);
+    std::cout << diff.tostr() << std::endl;
     
-    std::cout << "\n3. Îïåðàöèè ñ ïðèñâàèâàíèåì:" << std::endl;
+    std::cout << "\n3. ÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ñ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸ÐµÐ¼:" << std::endl;
     
     Three c("12");
     Three d("10");
-    Three result_add = c.addAndAssign(d);
-    std::cout << c.toString() << " += " << d.toString() << " = " << result_add.toString() << std::endl;
+    Three result_add = c.plus_assign(d);
+    std::cout << c.tostr() << " += " << d.tostr() << " = " << result_add.tostr() << std::endl;
     
     Three e("21");
     Three f("10");
-    Three result_sub = e.subtractAndAssign(f);
-    std::cout << e.toString() << " -= " << f.toString() << " = " << result_sub.toString() << std::endl;
+    Three result_sub = e.minus_assign(f);
+    std::cout << e.tostr() << " -= " << f.tostr() << " = " << result_sub.tostr() << std::endl;
     
-    std::cout << "\n4. Îïåðàöèè ñðàâíåíèÿ:" << std::endl;
+    std::cout << "\n4. ÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ:" << std::endl;
     
     Three x("210");
     Three y("120");
     
-    std::cout << x.toString() << " > " << y.toString() << " : " 
-              << (x.greaterThan(y) ? "true" : "false") << std::endl;
+    std::cout << x.tostr() << " > " << y.tostr() << " : " 
+              << (x.bigger(y) ? "true" : "false") << std::endl;
     
-    std::cout << x.toString() << " < " << y.toString() << " : " 
-              << (x.lessThan(y) ? "true" : "false") << std::endl;
+    std::cout << x.tostr() << " < " << y.tostr() << " : " 
+              << (x.lower(y) ? "true" : "false") << std::endl;
     
-    std::cout << x.toString() << " == " << y.toString() << " : " 
-              << (x.equals(y) ? "true" : "false") << std::endl;
+    std::cout << x.tostr() << " == " << y.tostr() << " : " 
+              << (x.equal(y) ? "true" : "false") << std::endl;
     
-    std::cout << "\n5. Äåìîíñòðàöèÿ èììóòàáåëüíîñòè:" << std::endl;
+    std::cout << "\n5. Ð”ÐµÐ¼Ð¾Ð½ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð¸Ð¼Ð¼ÑƒÑ‚Ð°Ð±ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸:" << std::endl;
     
-    Three original("121");
-    Three original_copy = original;
-    Three modified = original.add(Three("1"));
+    Three number("121");
+    Three number_copy = a;
+    Three number_plus = a.plus(Three("1"));
     
-    std::cout << "Èñõîäíîå ÷èñëî: " << original.toString() << std::endl;
-    std::cout << "Ïîñëå îïåðàöèè: " << original_copy.toString() << " (íå èçìåíèëîñü)" << std::endl;
-    std::cout << "Íîâûé îáúåêò: " << modified.toString() << std::endl;
+    std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << number.tostr() << std::endl;
+    std::cout << "ÐŸÐ¾ÑÐ»Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸: " << number_copy.tostr() << " (Ð½Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ð»Ð¾ÑÑŒ)" << std::endl;
+    std::cout << "ÐÐ¾Ð²Ñ‹Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚: " << number_plus.tostr() << std::endl;
 
-    std::cout << "Àäðåñ èñõîäíîãî îáúåêòà: " << &original << std::endl;
-    std::cout << "Àäðåñ îáúåêòà ïîñëå îïåðàöèè: " << &original_copy << std::endl;
+    std::cout << "ÐÐ´Ñ€ÐµÑ Ð¸ÑÑ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°: " << &number << std::endl;
+    std::cout << "ÐÐ´Ñ€ÐµÑ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð¿Ð¾ÑÐ»Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸: " << &number_copy << std::endl;
 
-    std::cout << "\n8. Ïîïûòêà 'èçìåíèòü' îáúåêò (çàùèòà êîìïèëÿòîðîì):" << std::endl;
-
-    Three protected_num("210");
-    Three new_num1 = protected_num.add(Three("1"));
-    Three new_num2 = protected_num.subtract(Three("1"));
+    std::cout << "\n8. ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° 'Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ' Ð¾Ð±ÑŠÐµÐºÑ‚ (Ð·Ð°Ñ‰Ð¸Ñ‚Ð° ÐºÐ¾Ð¼Ð¿Ð¸Ð»ÑÑ‚Ð¾Ñ€Ð¾Ð¼):" << std::endl;
 
     Three num("100");
-    std::cout << "Ïîïûòêà èçìåíèòü num = Three(\"200\"): ";
+    std::cout << "ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ num = Three(\"200\"): ";
     num = Three("200");
-    std::cout << num.toString() << std::endl;
+    std::cout << num.tostr() << std::endl;
 }
 
 int main() {
     try {
         demonstrateThreeClass();
     } catch (const std::exception& e) {
-        std::cerr << "Îøèáêà: " << e.what() << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: " << e.what() << std::endl;
         return 1;
     }
     

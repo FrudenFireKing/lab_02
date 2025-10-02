@@ -75,22 +75,22 @@ unsigned char Three::ch_to_dg(unsigned char c) const {
     throw invalid_argument("Invalid character in ternary string");
 }
 
-char Three::digitToChar(unsigned char digit) const {
+char Three::dg_to_ch(unsigned char digit) const {
     if (!val_tern(digit)) {
         throw invalid_argument("Invalid ternary digit");
     }
     return static_cast<char>('0' + digit);
 }
 
-string Three::toString() const {
+string Three::tostr() const {
     string result;
     for (auto it = digits.rbegin(); it != digits.rend(); ++it) {
-        result += digitToChar(*it);
+        result += dg_to_ch(*it);
     }
     return result;
 }
 
-Three Three::add(const Three& other) const {
+Three Three::plus(const Three& other) const {
     Three result;
     result.digits.clear();
     
@@ -113,12 +113,12 @@ Three Three::add(const Three& other) const {
     return result;
 }
 
-Three Three::subtract(const Three& other) const {
-    if (lessThan(other)) {
+Three Three::minus(const Three& other) const {
+    if (lower(other)) {
         throw invalid_argument("Cannot subtract larger number from smaller");
     }
     
-    if (equals(other)) {
+    if (equal(other)) {
         return Three();
     }
     
@@ -148,15 +148,15 @@ Three Three::subtract(const Three& other) const {
     return result;
 }
 
-Three Three::addAndAssign(const Three& other) const {
-    return add(other);
+Three Three::plus_assign(const Three& other) const {
+    return plus(other);
 }
 
-Three Three::subtractAndAssign(const Three& other) const {
-    return subtract(other);
+Three Three::minus_assign(const Three& other) const {
+    return minus(other);
 }
 
-bool Three::equals(const Three& other) const {
+bool Three::equal(const Three& other) const {
     if (digits.size() != other.digits.size()) 
         return false;
     
@@ -168,7 +168,7 @@ bool Three::equals(const Three& other) const {
     return true;
 }
 
-bool Three::lessThan(const Three& other) const {
+bool Three::lower(const Three& other) const {
     if (digits.size() != other.digits.size()) {
         return digits.size() < other.digits.size();
     }
@@ -182,10 +182,10 @@ bool Three::lessThan(const Three& other) const {
     return false;
 }
 
-bool Three::greaterThan(const Three& other) const {
-    return !lessThan(other) && !equals(other);
+bool Three::bigger(const Three& other) const {
+    return !lower(other) && !equal(other);
 }
 
-bool Three::isZero() const {
+bool Three::iszero() const {
     return (digits.size() == 1) && (digits[0] == 0);
 }
