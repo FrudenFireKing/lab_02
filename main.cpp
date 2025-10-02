@@ -69,7 +69,7 @@ void demonstrateThreeClass() {
 
     std::cout << "Адрес исходного объекта: " << &number << std::endl;
     std::cout << "Адрес объекта после операции: " << &number_copy << std::endl;
-/*
+
     std::cout << "\n6. Попытка 'изменить' объект (защита компилятором):" << std::endl;
 
     Three num("100");
@@ -87,5 +87,6 @@ int main() {
     }
     
     return 0;
-*/
+
 }
+
