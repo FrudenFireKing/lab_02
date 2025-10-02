@@ -12,7 +12,7 @@ class Three {
 public:
     std::vector<unsigned char> digits;
 
-    void removeLeadingZeros();
+    void rm_lead_zer();
     bool isValidTernaryDigit(unsigned char digit) const;
     unsigned char charToDigit(unsigned char c) const;
     char digitToChar(unsigned char digit) const;

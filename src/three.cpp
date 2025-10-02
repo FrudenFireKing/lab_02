@@ -18,7 +18,7 @@ Three::Three(const size_t& n, unsigned char t) {
     }
     
     digits.resize(n, t);
-    removeLeadingZeros();
+    rm_lead_zer();
 }
 
 Three::Three(const initializer_list<unsigned char>& t) {
@@ -34,7 +34,7 @@ Three::Three(const initializer_list<unsigned char>& t) {
     }
     
     reverse(digits.begin(), digits.end());
-    removeLeadingZeros();
+    rm_lead_zer();
 }
 
 Three::Three(const string& t) {
@@ -47,30 +47,14 @@ Three::Three(const string& t) {
         digits.push_back(digit);
     }
     
-    removeLeadingZeros();
+    rm_lead_zer();
 }
 
 Three::Three(const Three& other) : digits(other.digits) {}
-
 Three::Three(Three&& other) noexcept : digits(move(other.digits)) {}
-
 Three::~Three() noexcept {}
 
-/*Three& Three::operator=(const Three& other) {
-    if (this != &other) {
-        digits = other.digits;
-    }
-    return *this;
-}
-
-Three& Three::operator=(Three&& other) noexcept {
-    if (this != &other) {
-        digits = move(other.digits);
-    }
-    return *this;
-}*/
-
-void Three::removeLeadingZeros() {
+void Three::rm_lead_zer() {
     while (digits.size() > 1 && digits.back() == 0) {
         digits.pop_back();
     }
@@ -125,7 +109,7 @@ Three Three::add(const Three& other) const {
         carry = static_cast<unsigned char>(sum / 3);
     }
     
-    result.removeLeadingZeros();
+    result.rm_lead_zer();
     return result;
 }
 
@@ -160,7 +144,7 @@ Three Three::subtract(const Three& other) const {
         result.digits.push_back(static_cast<unsigned char>(diff));
     }
     
-    result.removeLeadingZeros();
+    result.rm_lead_zer();
     return result;
 }
 
