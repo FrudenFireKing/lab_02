@@ -13,8 +13,8 @@ public:
     std::vector<unsigned char> digits;
 
     void rm_lead_zer();
-    bool isValidTernaryDigit(unsigned char digit) const;
-    unsigned char charToDigit(unsigned char c) const;
+    bool val_tern(unsigned char digit) const;
+    unsigned char ch_to_dg(unsigned char c) const;
     char digitToChar(unsigned char digit) const;
 
     Three();

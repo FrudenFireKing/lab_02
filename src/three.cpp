@@ -13,7 +13,7 @@ Three::Three(const size_t& n, unsigned char t) {
         throw invalid_argument("Size cannot be zero");
     }
     
-    if (!isValidTernaryDigit(t)) {
+    if (!val_tern(t)) {
         throw invalid_argument("Invalid ternary digit");
     }
     
@@ -27,7 +27,7 @@ Three::Three(const initializer_list<unsigned char>& t) {
     }
     
     for (auto it = t.begin(); it != t.end(); ++it) {
-        if (!isValidTernaryDigit(*it)) {
+        if (!val_tern(*it)) {
             throw invalid_argument("Invalid ternary digit in initializer list");
         }
         digits.push_back(*it);
@@ -43,7 +43,7 @@ Three::Three(const string& t) {
     }
     
     for (auto it = t.rbegin(); it != t.rend(); ++it) {
-        unsigned char digit = charToDigit(*it);
+        unsigned char digit = ch_to_dg(*it);
         digits.push_back(digit);
     }
     
@@ -64,11 +64,11 @@ void Three::rm_lead_zer() {
     }
 }
 
-bool Three::isValidTernaryDigit(unsigned char digit) const {
+bool Three::val_tern(unsigned char digit) const {
     return digit >= 0 && digit <= 2;
 }
 
-unsigned char Three::charToDigit(unsigned char c) const {
+unsigned char Three::ch_to_dg(unsigned char c) const {
     if (c >= '0' && c <= '2') {
         return static_cast<unsigned char>(c - '0');
     }
@@ -76,7 +76,7 @@ unsigned char Three::charToDigit(unsigned char c) const {
 }
 
 char Three::digitToChar(unsigned char digit) const {
-    if (!isValidTernaryDigit(digit)) {
+    if (!val_tern(digit)) {
         throw invalid_argument("Invalid ternary digit");
     }
     return static_cast<char>('0' + digit);
