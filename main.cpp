@@ -6,64 +6,64 @@ int main() {
         Three a("120");
         Three b("21");
 
-        std::cout << "=== Ğ”ĞµĞ¼Ğ¾Ğ½ÑÑ‚Ñ€Ğ°Ñ†Ğ¸Ñ ĞºĞ»Ğ°ÑÑĞ° Three Ğ´Ğ»Ñ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ñ‹ Ñ Ñ‚Ñ€Ğ¾Ğ¸Ñ‡Ğ½Ñ‹Ğ¼Ğ¸ Ñ‡Ğ¸ÑĞ»Ğ°Ğ¼Ğ¸ ===\n";
-        std::cout << "a = " << a.tostr() << "\n";
-        std::cout << "b = " << b.tostr() << "\n";
+        std::cout << "=== Äåìîíñòğàöèÿ êëàññà Three äëÿ ğàáîòû ñ òğîè÷íûìè ÷èñëàìè ===\n";
+        std::cout << "a = " << a.toString() << "\n";
+        std::cout << "b = " << b.toString() << "\n";
 
         Three a_copy = a;
 
-        std::cout << "\n1. ĞšĞ¾Ğ¿Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ğµ:\n";
-        std::cout << "a_copy = a = " << a_copy.tostr() << "\n";
-        std::cout << "a.equal(a_copy) = " << (a.equal(a_copy) ? "true" : "false") << "\n";
+        std::cout << "\n1. Êîïèğîâàíèå:\n";
+        std::cout << "a_copy = a = " << a_copy.toString() << "\n";
+        std::cout << "a.equals(a_copy) = " << (a.equals(a_copy) ? "true" : "false") << "\n";
 
-        Three c = a.plus(b);
-        Three d = a.minus(b);
+        Three c = a.add(b);
+        Three d = a.subtract(b);
 
-        std::cout << "\n2. ĞÑ€Ğ¸Ñ„Ğ¼ĞµÑ‚Ğ¸Ñ‡ĞµÑĞºĞ¸Ğµ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸:\n";
-        std::cout << "c = a + b = " << c.tostr() << "\n";
-        std::cout << "d = a - b = " << d.tostr() << "\n";
+        std::cout << "\n2. Àğèôìåòè÷åñêèå îïåğàöèè:\n";
+        std::cout << "c = a + b = " << c.toString() << "\n";
+        std::cout << "d = a - b = " << d.toString() << "\n";
 
-        std::cout << "\n3. ĞĞ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸ Ñ Ğ¿Ñ€Ğ¸ÑĞ²Ğ°Ğ¸Ğ²Ğ°Ğ½Ğ¸ĞµĞ¼:\n";
+        std::cout << "\n3. Îïåğàöèè ñ ïğèñâàèâàíèåì:\n";
         Three e("12");
         Three f("10");
-        std::cout << "e = " << e.tostr() << ", f = " << f.tostr() << "\n";
-        Three result_add = e.plus_assign(f);
-        std::cout << "e.plus_assign(f) = " << result_add.tostr() << "\n";
+        std::cout << "e = " << e.toString() << ", f = " << f.toString() << "\n";
+        Three result_add = e.addAndAssign(f);
+        std::cout << "e.addAndAssign(f) = " << result_add.toString() << "\n";
 
         Three g("21");
         Three h("10");
-        std::cout << "g = " << g.tostr() << ", h = " << h.tostr() << "\n";
-        Three result_sub = g.minus_assign(h);
-        std::cout << "g.minus_assign(h) = " << result_sub.tostr() << "\n";
+        std::cout << "g = " << g.toString() << ", h = " << h.toString() << "\n";
+        Three result_sub = g.subtractAndAssign(h);
+        std::cout << "g.subtractAndAssign(h) = " << result_sub.toString() << "\n";
 
-        bool eq = a.equal(b);
-        bool lt = a.lower(b);
-        bool gt = a.bigger(b);
+        bool eq = a.equals(b);
+        bool lt = a.lessThan(b);
+        bool gt = a.greaterThan(b);
 
-        std::cout << "\n4. ĞĞ¿ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸ ÑÑ€Ğ°Ğ²Ğ½ĞµĞ½Ğ¸Ñ:\n";
+        std::cout << "\n4. Îïåğàöèè ñğàâíåíèÿ:\n";
         std::cout << "a == b ? " << (eq ? "true" : "false") << "\n";
         std::cout << "a <  b ? " << (lt ? "true" : "false") << "\n";
         std::cout << "a >  b ? " << (gt ? "true" : "false") << "\n";
 
-        std::cout << "\n5. ĞŸÑ€Ğ¾Ğ²ĞµÑ€ĞºĞ° Ğ¸Ğ¼Ğ¼ÑƒÑ‚Ğ°Ğ±ĞµĞ»ÑŒĞ½Ğ¾ÑÑ‚Ğ¸:\n";
-        std::cout << "Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ğ¾Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ a: " << a.tostr() << "\n";
+        std::cout << "\n5. Ïğîâåğêà èììóòàáåëüíîñòè:\n";
+        std::cout << "Èñõîäíîå çíà÷åíèå a: " << a.toString() << "\n";
         
         Three new_val("210");
-        std::cout << "ĞŸĞ¾Ğ¿Ñ‹Ñ‚ĞºĞ° Ğ¿Ñ€Ğ¸ÑĞ²Ğ¾Ğ¸Ñ‚ÑŒ a Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ (new_val): " << new_val.tostr() << "\n";
+        std::cout << "Ïîïûòêà ïğèñâîèòü a íîâîå çíà÷åíèå (new_val): " << new_val.toString() << "\n";
 
         Three a_after_assignment = a;
         
-        std::cout << "Ğ—Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ a Ğ¿Ğ¾ÑĞ»Ğµ Ğ¿Ğ¾Ğ¿Ñ‹Ñ‚ĞºĞ¸ Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ: " << a.tostr() << " â†’ Ğ¾ÑÑ‚Ğ°Ğ»Ğ¾ÑÑŒ Ğ¿Ñ€ĞµĞ¶Ğ½Ğ¸Ğ¼!\n";
-        std::cout << "ĞĞ¾Ğ²Ñ‹Ğ¹ Ğ¾Ğ±ÑŠĞµĞºÑ‚ a_after_assignment: " << a_after_assignment.tostr() << " â†’ Ğ½ĞµĞ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ°Ñ ĞºĞ¾Ğ¿Ğ¸Ñ!\n";
+        std::cout << "Çíà÷åíèå a ïîñëå ïîïûòêè èçìåíåíèÿ: " << a.toString() << " ? îñòàëîñü ïğåæíèì!\n";
+        std::cout << "Íîâûé îáúåêò a_after_assignment: " << a_after_assignment.toString() << " ? íåçàâèñèìàÿ êîïèÿ!\n";
         
-        std::cout << "a.equal(new_val) = " << (a.equal(new_val) ? "true" : "false") << " â†’ Ñ€Ğ°Ğ·Ğ½Ñ‹Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ!\n";
+        std::cout << "a.equals(new_val) = " << (a.equals(new_val) ? "true" : "false") << " ? ğàçíûå çíà÷åíèÿ!\n";
         
-        std::cout << "\n6. ĞŸÑ€Ğ¾Ğ²ĞµÑ€ĞºĞ° Ğ°Ğ´Ñ€ĞµÑĞ¾Ğ² Ğ¿Ğ°Ğ¼ÑÑ‚Ğ¸:\n";
-        std::cout << "ĞĞ´Ñ€ĞµÑ Ğ¾Ğ±ÑŠĞµĞºÑ‚Ğ° a: " << &a << "\n";
-        std::cout << "ĞĞ´Ñ€ĞµÑ Ğ¾Ğ±ÑŠĞµĞºÑ‚Ğ° a_copy: " << &a_copy << "\n";
-        std::cout << "ĞĞ´Ñ€ĞµÑ Ğ¾Ğ±ÑŠĞµĞºÑ‚Ğ° a_after_assignment: " << &a_after_assignment << "\n";
-        std::cout << "ĞĞ´Ñ€ĞµÑ Ğ¾Ğ±ÑŠĞµĞºÑ‚Ğ° new_val: " << &new_val << "\n";
-        std::cout << "Ğ’ÑĞµ Ğ¾Ğ±ÑŠĞµĞºÑ‚Ñ‹ Ğ¸Ğ¼ĞµÑÑ‚ Ñ€Ğ°Ğ·Ğ½Ñ‹Ğµ Ğ°Ğ´Ñ€ĞµÑĞ° â†’ ĞºĞ°Ğ¶Ğ´Ñ‹Ğ¹ Ğ¾Ğ±ÑŠĞµĞºÑ‚ ÑƒĞ½Ğ¸ĞºĞ°Ğ»ĞµĞ½ Ğ¸ Ğ½ĞµĞ¸Ğ·Ğ¼ĞµĞ½ÑĞµĞ¼!\n";
+        std::cout << "\n6. Ïğîâåğêà àäğåñîâ ïàìÿòè:\n";
+        std::cout << "Àäğåñ îáúåêòà a: " << &a << "\n";
+        std::cout << "Àäğåñ îáúåêòà a_copy: " << &a_copy << "\n";
+        std::cout << "Àäğåñ îáúåêòà a_after_assignment: " << &a_after_assignment << "\n";
+        std::cout << "Àäğåñ îáúåêòà new_val: " << &new_val << "\n";
+        std::cout << "Âñå îáúåêòû èìåşò ğàçíûå àäğåñà ? êàæäûé îáúåêò óíèêàëåí è íåèçìåíÿåì!\n";
 
     } catch (const std::exception &ex) {
         std::cerr << "Error: " << ex.what() << "\n";

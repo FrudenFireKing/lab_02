@@ -1,7 +1,6 @@
 #ifndef THREE_H
 #define THREE_H
 
-#include <iostream>
 #include <vector>
 #include <string>
 #include <stdexcept>
@@ -9,14 +8,16 @@
 #include <algorithm>
 
 class Three {
-public:
+private:
     std::vector<unsigned char> digits;
 
-    void rm_lead_zer();
-    bool val_tern(unsigned char digit) const;
-    unsigned char ch_to_dg(unsigned char c) const;
-    char dg_to_ch(unsigned char digit) const;
+    void removeLeadingZeros();
+    bool isValidTernaryDigit(unsigned char digit) const;
+    unsigned char charToDigit(unsigned char c) const;
+    char digitToChar(unsigned char digit) const;
 
+public:
+    // Конструкторы
     Three();
     explicit Three(const size_t& n, unsigned char t = 0);
     Three(const std::initializer_list<unsigned char>& t);
@@ -25,35 +26,29 @@ public:
     Three(Three&& other) noexcept;
     virtual ~Three() noexcept;
 
+    // Методы доступа
     size_t getSize() const { return digits.size(); }
-    std::string tostr() const;
-    const std::vector<unsigned char>& getdg() const { return digits; }
+    std::string toString() const;
+    const std::vector<unsigned char>& getDigits() const { return digits; }
 
-    Three plus(const Three& other) const;
-    Three minus(const Three& other) const;
+    // Арифметические операции
+    Three add(const Three& other) const;
+    Three subtract(const Three& other) const;
     
-    Three plus_assign(const Three& other) const;
-    Three minus_assign(const Three& other) const;
+    // Операции с присваиванием
+    Three addAndAssign(const Three& other) const;
+    Three subtractAndAssign(const Three& other) const;
 
-    bool equal(const Three& other) const;
-    bool lower(const Three& other) const;
-    bool bigger(const Three& other) const;
+    // Операции сравнения
+    bool equals(const Three& other) const;
+    bool lessThan(const Three& other) const;
+    bool greaterThan(const Three& other) const;
 
-    bool iszero() const;
-
-    bool try_assign(const Three& other) {
-        return false;
-    }
+    bool isZero() const;
     
-    Three& operator=(const Three& other) {
-        (void)other;
-        throw std::runtime_error("Р”Р»СЏ РѕР±СЉРµРєС‚Р° Three РЅРµР»СЊР·СЏ РїСЂРёСЃРІРѕРёС‚СЊ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ!");
-    }
-    
-    Three& operator=(Three&& other) {
-        (void)other;
-        throw std::runtime_error("Р”Р»СЏ РѕР±СЉРµРєС‚Р° Three РЅРµР»СЊР·СЏ РїСЂРёСЃРІРѕРёС‚СЊ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ!");
-    }
+    // Защита от присваивания
+    Three& operator=(const Three& other) = delete;
+    Three& operator=(Three&& other) = delete;
 };
 
-#endif 
+#endif
