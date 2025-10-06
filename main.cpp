@@ -53,17 +53,17 @@ int main() {
 
         Three a_after_assignment = a;
         
-        std::cout << "Значение a после попытки изменения: " << a.toString() << " ? осталось прежним!\n";
-        std::cout << "Новый объект a_after_assignment: " << a_after_assignment.toString() << " ? независимая копия!\n";
+        std::cout << "Значение a после попытки изменения: " << a.toString() << " - осталось прежним!\n";
+        std::cout << "Новый объект a_after_assignment: " << a_after_assignment.toString() << " - независимая копия!\n";
         
-        std::cout << "a.equals(new_val) = " << (a.equals(new_val) ? "true" : "false") << " ? разные значения!\n";
+        std::cout << "a.equals(new_val) = " << (a.equals(new_val) ? "true" : "false") << " - разные значения!\n";
         
         std::cout << "\n6. Проверка адресов памяти:\n";
         std::cout << "Адрес объекта a: " << &a << "\n";
         std::cout << "Адрес объекта a_copy: " << &a_copy << "\n";
         std::cout << "Адрес объекта a_after_assignment: " << &a_after_assignment << "\n";
         std::cout << "Адрес объекта new_val: " << &new_val << "\n";
-        std::cout << "Все объекты имеют разные адреса ? каждый объект уникален и неизменяем!\n";
+        std::cout << "Все объекты имеют разные адреса - каждый объект уникален и неизменяем!\n";
 
     } catch (const std::exception &ex) {
         std::cerr << "Error: " << ex.what() << "\n";
