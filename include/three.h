@@ -17,7 +17,6 @@ private:
     char digitToChar(unsigned char digit) const;
 
 public:
-    // Конструкторы
     Three();
     explicit Three(const size_t& n, unsigned char t = 0);
     Three(const std::initializer_list<unsigned char>& t);
@@ -26,27 +25,22 @@ public:
     Three(Three&& other) noexcept;
     virtual ~Three() noexcept;
 
-    // Методы доступа
     size_t getSize() const { return digits.size(); }
     std::string toString() const;
     const std::vector<unsigned char>& getDigits() const { return digits; }
 
-    // Арифметические операции
     Three add(const Three& other) const;
     Three subtract(const Three& other) const;
     
-    // Операции с присваиванием
     Three addAndAssign(const Three& other) const;
     Three subtractAndAssign(const Three& other) const;
 
-    // Операции сравнения
     bool equals(const Three& other) const;
     bool lessThan(const Three& other) const;
     bool greaterThan(const Three& other) const;
 
     bool isZero() const;
-    
-    // Защита от присваивания
+
     Three& operator=(const Three& other) = delete;
     Three& operator=(Three&& other) = delete;
 };
